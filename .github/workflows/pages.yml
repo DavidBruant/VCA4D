@@ -40,4 +40,4 @@ jobs:
           git checkout -b prod
           git add dist -f
           git commit -m "Build of repo at commit https://github.com/$GITHUB_REPOSITORY/tree/$GITHUB_SHA"
-          git subtree push --force --prefix dist origin prod
+          git push origin prod --force 
