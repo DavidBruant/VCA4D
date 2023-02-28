@@ -1,9 +1,9 @@
 <script setup>
-import TheWelcome from '../components/TheWelcome.vue'
+import Skeleton from '../components/Skeleton.vue'
 </script>
 
 <template>
-  <main>
+  <Skeleton>
     <h1>Get insight into food value chains in developing countries</h1>
     <p>
       Welcome to the VCA4D website. You will find a tailored access to 35 value chain analyses
@@ -13,11 +13,16 @@ import TheWelcome from '../components/TheWelcome.vue'
       information across 4 related domains:
     </p>
     <ul>
-      <li>the various actors and structuration of the chain</li>
-      <li>its contribution to economic growth and the state's public finance</li>
-      <li>the chain's inclusiveness and contribution to employment</li>
-      <li>the impact of the value chain on environment.</li>
+      <li>the various actors and <strong>structuration of the chain</strong></li>
+      <li>its contribution to <strong>economic growth</strong> and the state's public finance</li>
+      <li>the chain's <strong>inclusiveness</strong> and contribution to <strong>employment</strong></li>
+      <li>the impact of the value chain on <strong>environment</strong>.</li>
     </ul>
-    <TheWelcome />
-  </main>
+  </Skeleton>
 </template>
+
+<style scoped lang="scss">
+ul{
+  list-style-type: "- ";
+}
+</style>
