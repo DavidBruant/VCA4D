@@ -13,9 +13,9 @@ import { RouterLink } from 'vue-router'
             <img src="/images/logo/VCA4D.jpeg" alt="VCA4D logo">
             <img src="/images/logo/european-commission.jpeg" alt="european commission logo">
             -->
-            <img alt="agrinatura network logo">
-            <img alt="VCA4D logo">
-            <img alt="european commission logo">
+            <img class="TODO" alt="agrinatura network logo">
+            <img class="TODO" alt="VCA4D logo">
+            <img class="TODO" alt="european commission logo">
         </div>
     </header>
 
@@ -24,7 +24,9 @@ import { RouterLink } from 'vue-router'
     </main>
 
     <footer>
-        FOOTER
+        <ul>
+            <li class="TODO"><a href="https://github.com/DavidBruant/VCA4D">Code source sur Github</a></li>
+        </ul>
     </footer>
 </template>
 
@@ -60,7 +62,12 @@ header{
             text-align: center;
         }
     }
+}
 
+
+footer{
+    min-height: 10rem;
+    background-color: grey;
 }
 
 </style>
