@@ -27,6 +27,7 @@ import Skeleton from '../components/Skeleton.vue'
 </script>
 
 <script>
+//@ts-check
 import getStudyData from '../studyData.js'
 
 export default {
@@ -39,8 +40,16 @@ export default {
         }
     },
     created() {
-        console.log('route params', this.$route.params)
-        //getStudyData()
+        const studyId = this.$route.query.id
+        
+        console.log('studyId', studyId)
+
+        getStudyData(studyId).then(studyData => {
+            this.studyData = studyData
+        })
+        .catch(err => {
+            this.error = err;
+        })
     }
 }
 </script>
