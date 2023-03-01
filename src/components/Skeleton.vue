@@ -23,9 +23,9 @@ import { RouterLink } from 'vue-router'
         <slot></slot>
     </main>
 
-    <footer>
+    <footer class="TODO">
         <ul>
-            <li class="TODO"><a href="https://github.com/DavidBruant/VCA4D">Code source sur Github</a></li>
+            <li><a href="https://github.com/DavidBruant/VCA4D">Code source sur Github</a></li>
         </ul>
     </footer>
 </template>
@@ -62,6 +62,13 @@ header{
             text-align: center;
         }
     }
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
 }
 
 

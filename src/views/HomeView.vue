@@ -88,6 +88,7 @@ section {
 
 section.banner {
     height: 25rem;
+    width: 100%;
 
     background-image: url('../images/home-banner.png');
     background-position: center center;
