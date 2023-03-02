@@ -1,7 +1,7 @@
 <template>
     <article>
         <h1>Is the value chain environmentally sustainable? </h1>
-        
+        <pre>{{ JSON.stringify(studyData, null, 2) }}</pre>
 
     </article>
 
@@ -9,7 +9,6 @@
 
 <script setup>
 import { RouterLink } from 'vue-router'
-
 </script>
 
 <script>
