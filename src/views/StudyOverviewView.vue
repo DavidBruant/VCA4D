@@ -20,7 +20,7 @@
         <nav>
             <ol v-if="studyData">
                 <li>
-                    <a :href="'/study?id=' + studyData.id">Overview</a>
+                    <RouterLink :to="'/study?id=' + studyData.id">Overview</RouterLink>
                 </li>
                 <li>
                     <a class="TODO">Contribution to economic growth</a>
@@ -32,7 +32,7 @@
                     <a class="TODO">Social sustainability</a>
                 </li>
                 <li>
-                    <a :href="'/study?id=' + studyData.id + '&view=environment' ">Environmental sustainability</a>
+                    <RouterLink :to="'/study?id=' + studyData.id + '&view=environment'">Environmental sustainability</RouterLink>
                 </li>
                 <li>
                     <a class="TODO">Study brief and full report</a>
@@ -84,16 +84,41 @@
             </section>
 
 
-            <section>
+            <section class="explore">
                 <h2>Explore the 4 dimensions of the value chain</h2>
                 
-                <p>
+                <!--
+                <p class="TODO">
                     Implémenter l'idée de Sofia où on reprend les 4 dimensions
                     avec pour chacune le sous-menu
                     et aucun graphique
                     et juste un lien vers la section correspondante
 
                 </p>
+                -->
+                <RouterLink :to="'/study?id=' + studyData.id + '&view=economics'">
+                    <h3>Contribution to growth</h3>
+                    <p>Learn more about <em>Contribution to GDP</em>, <em>Public finances</em>, 
+                        <em>Balance of trade</em> and <em>Viability in international economy</em></p>
+                </RouterLink>
+                <RouterLink :to="'/study?id=' + studyData.id + '&view=inclusiveness'">
+                    <h3>Inclusiveness</h3>
+                    <p>Learn more about <em>Employment</em>, <em>Profits distribution across actors</em> and 
+                        <em>Impact of governance</em></p>
+                </RouterLink>
+                <RouterLink :to="'/study?id=' + studyData.id + '&view=social'">
+                    <h3>Social sustainability</h3>
+                    <p>Learn more about <em>Working conditions</em>, <em>Land and water rights</em>, 
+                        <em>Gender equality</em>, <em>Food & nutrition security</em>,
+                        <em>Social capital</em> and
+                        <em>Living conditions</em>
+                    </p>
+                </RouterLink>
+                <RouterLink :to="'/study?id=' + studyData.id + '&view=environment'">
+                    <h3>Environmental sustainability</h3>
+                    <p>Learn more about <em>Climate change</em>, <em>human health</em> and
+                        <em>Ecosystems</em> </p>
+                </RouterLink>
 
             </section>
 
@@ -146,13 +171,12 @@
 
             </section>
 
-            
-
         </article>
     </Skeleton>
 </template>
 
 <script setup>
+import { RouterLink } from 'vue-router'
 import Skeleton from '../components/Skeleton.vue'
 
 </script>
@@ -242,6 +266,46 @@ article {
                     height: 5rem;
                     margin-bottom: 1rem;
                 }
+            }
+        }
+    }
+
+    section.explore{
+        a{
+            display: block;
+            width: 100%;
+            min-height: 6rem;
+
+            padding: 1rem;
+            margin-bottom: 1rem;
+
+            position: relative;
+
+            color: unset;
+            text-decoration: none;
+
+            background-color: bisque;
+            border-radius: 1rem;
+
+            h3{
+                text-transform: uppercase;
+                margin: 0;
+            }
+
+            p{
+                margin: 0;
+            }
+            
+            &::after{
+                content: '→';
+                
+                color: blue;
+                font-size: 2rem;
+
+                position: absolute;
+                right: 1rem;
+                top: 50%;
+                transform: translateY(-50%);
             }
         }
     }
